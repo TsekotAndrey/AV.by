@@ -9,14 +9,19 @@ public class MainPage {
     }
 
     private By login = By.xpath("//a[@class='nav__link js-open-auth-drawer']//span[@class='nav__link-text']");
-    private By addCar = By.xpath("//a[@class='button-n button--primary button--small button--block']");
+    private By registration = By.xpath("//div[@class='flyer__foot']//a[1]");
+    private By headingtext = By.xpath("//h4[@class='brands-title']");
 
     public LoginPage login(){
         chromeDriver.findElement(login).click();
         return new LoginPage(chromeDriver);
     }
-    public AddNewCar addCar(){
-        chromeDriver.findElement(addCar).click();
-        return new AddNewCar(chromeDriver);
+    public RegistrationPage  registration (){
+        chromeDriver.findElement(login).click();
+        chromeDriver.findElement(registration).click();
+        return new RegistrationPage(chromeDriver);
+    }
+    public String getHeadig2Test() {
+        return chromeDriver.findElement(headingtext).getText();
     }
 }
