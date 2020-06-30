@@ -10,7 +10,7 @@ public class MainPage {
 
     private By login = By.xpath("//a[@class='nav__link js-open-auth-drawer']//span[@class='nav__link-text']");
     private By registration = By.xpath("//div[@class='flyer__foot']//a[1]");
-    private By headingtext = By.xpath("//h4[@class='brands-title']");
+    private By headingText = By.xpath("//h4[@class='brands-title']");
 
     public LoginPage login(){
         chromeDriver.findElement(login).click();
@@ -21,7 +21,7 @@ public class MainPage {
         chromeDriver.findElement(registration).click();
         return new RegistrationPage(chromeDriver);
     }
-    public String getHeadig2Test() {
-        return chromeDriver.findElement(headingtext).getText();
+    public String getHeadigTest() {
+        return chromeDriver.findElement(headingText).getText();
     }
 }
